@@ -1,0 +1,121 @@
+#previewArticle .wrapper{
+    font-size:medium;
+    padding:1rem;
+    background-color: white;
+    min-height: 100vh;
+    padding-bottom:10vh;
+}
+/*标准模式*/
+.wrapper0  .title{
+    font-size:21px;
+    color: black;
+    margin-bottom: 10px;
+}
+.wrapper0 .infoContent{
+overflow: hidden;
+margin-bottom: 10px;
+height: 1.5rem;
+}
+.wrapper0 .time, .wrapper0 .count, .wrapper0 .userName{
+float: left;
+margin-right: 10px;
+}
+.wrapper0 .count img{
+margin-right: 3px;
+}
+.wrapper0 .userName{
+color: #0080cc;
+}
+.wrapper0 .itemWrapper{
+margin: 1rem 0;
+color: #333;
+word-wrap: break-word;
+}
+.wrapper0 .imgItem{
+background-size: 100%;
+background-repeat: no-repeat;
+background-position: 50% 50%;
+}
+
+/*情人节*/
+.wrapper4{
+    background:url("../images/articleTemplate/springFestival/bg.png");
+    background-size: cover;
+    padding: 0 0 10vh 0!important;
+}
+.wrapper4 .top{
+    width: 100%;
+    height: 200px;
+    background:url("../images/articleTemplate/springFestival/top.png") center center no-repeat;
+    background-size: contain;
+}
+.wrapper4 .bottom{
+    background:url("../images/articleTemplate/springFestival/bottom.png") center center no-repeat;
+    background-size: contain;
+}
+ .wrapper4  .title{
+    font-size:21px;
+    color: white;
+    margin-bottom: 10px;
+     text-align: center;
+}
+ .wrapper4 .infoContent{
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    height: 1.5rem;
+     display: table;
+}
+ .wrapper4 .time, .wrapper4 .count, .wrapper4 .userName{
+    float: left;
+    margin-right: 10px;
+     color: #dca7ab;
+     font-family: "Microsoft Yahei";
+ }
+ .wrapper4 .count img{
+    margin-right: 3px;
+}
+ .wrapper4 .itemWrapper{
+    margin: 1rem 0;
+    color: #333;
+    word-wrap: break-word;
+}
+ .wrapper4 .txtWrapper{
+     padding: 0 10px;
+ }
+ .wrapper4 .imgWrapper{
+     position: relative;
+     width:100%;
+     padding: 60px 0 30px 0;
+ }
+ .wrapper4 .imgItem{
+     margin:0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+     border: 5px solid transparent;
+     border-image:url("../images/articleTemplate/springFestival/imageBorder.png") 7 7 5 7 repeat;
+}
+ .wrapper4 .dec1{
+     background:url("../images/articleTemplate/springFestival/dec1.png") no-repeat;
+     width: 120px;
+     height: 120px;
+     bottom: -10px;
+ }
+.wrapper4 .dec2{
+    background:url("../images/articleTemplate/springFestival/dec2.png") no-repeat;
+    width: 113px;
+    height: 128px;
+    top: 0px;
+    right: -20px;
+}
+.wrapper4 .dec3{
+    background:url("../images/articleTemplate/springFestival/dec3.png") no-repeat;
+    width: 100px;
+    height: 100px;
+    top: 30px;
+    left: 10px;
+}
+.wrapper4 .dec1, .wrapper4 .dec2, .wrapper4 .dec3{
+    position: absolute;
+    background-size: contain;
+}

@@ -1,0 +1,589 @@
+{
+  "success": true,
+  "code": 200,
+  "msg": "操作成功",
+  "obj": {
+    "id": 2017121100024,
+    "name": "副本-手机相册模板",
+    "createUser": "1000018",
+    "type": 101,
+    "pageMode": 0,
+    "image": {
+      "imgSrc": "default_thum.jpg",
+      "lastPageId": 0,
+      "hideEqAd": 0,
+      "isAdvancedUser": 0,
+      "bgAudio": null
+    },
+    "property": "",
+    "timeout": "",
+    "timeout_url": "",
+    "accessCode": null,
+    "cover": "default_thum.jpg",
+    "bgAudio": "null",
+    "isTpl": 0,
+    "isPromotion": 0,
+    "status": 1,
+    "openLimit": 0,
+    "startDate": null,
+    "endDate": null,
+    "updateTime": 1426045746000,
+    "createTime": 1426572693000,
+    "publishTime": 1426572693000,
+    "applyTemplate": 0,
+    "applyPromotion": 0,
+    "sourceId": null,
+    "code": "U812113K4H36YCBU",
+    "description": "",
+    "sort": 0,
+    "pageCount": 0,
+    "dataCount": 0,
+    "showCount": 0,
+    "eqcode": "",
+    "userLoginName": null,
+    "userName": null
+  },
+  "map": null,
+  "list": [
+    {
+      "id": 35583,
+      "sceneId": 2017121100024,
+      "num": 1,
+      "name": null,
+      "properties": null,
+      "elements": [
+        {
+          "content": "",
+          "css": {
+            "top": 24,
+            "left": 15,
+            "color": "#676767",
+            "zIndex": 101,
+            "width": 277,
+            "height": 436,
+            "backgroundColor": "",
+            "opacity": 1,
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "textAlign": "left",
+            "lineHeight": 1,
+            "borderRadiusPerc": 0,
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px"
+          },
+          "id": 628388519,
+          "num": 1,
+          "pageId": 34311,
+          "properties": {
+            "width": 277,
+            "height": 436,
+            "src": "syspic/bg/c69a69ae59c5b9d99b1ba08211c0c410.jpg",
+            "replacement": false,
+            "id": 604991,
+            "imgStyle": {
+              "width": 276,
+              "height": 436,
+              "marginTop": "0px",
+              "marginLeft": "0px"
+            }
+          },
+          "sceneId": 171116003,
+          "title": null,
+          "type": 4
+        },
+        {
+          "content": "",
+          "css": {
+            "top": 80,
+            "left": 71,
+            "color": "#676767",
+            "zIndex": 103,
+            "width": 180,
+            "height": 180,
+            "backgroundColor": "",
+            "opacity": 1,
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "textAlign": "left",
+            "lineHeight": 1,
+            "borderRadiusPerc": 0,
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px"
+          },
+          "id": 7540950293,
+          "num": 1,
+          "pageId": 34311,
+          "properties": {
+            "width": 180,
+            "height": 180,
+            "src": "syspic/img/d0d9771ac016aab158d002d21fa12329.png",
+            "replacement": true,
+            "id": 607790,
+            "imgStyle": {
+              "width": 180,
+              "height": 180,
+              "marginTop": "0px",
+              "marginLeft": "0px"
+            }
+          },
+          "sceneId": 171116003,
+          "title": null,
+          "type": 4
+        }
+      ],
+      "scene": null,
+      "bgimgs": "",
+      "isTpl": 0
+    },
+    {
+      "id": 35584,
+      "sceneId": 2017121100024,
+      "num": 2,
+      "name": null,
+      "properties": null,
+      "elements": [
+        {
+          "content": null,
+          "css": [],
+          "id": 5612509524,
+          "num": 0,
+          "pageId": 34312,
+          "properties": {
+            "bgColor": null,
+            "imgSrc": "syspic/bg/934554a4dd8df0f045dc187d67719e88.jpg",
+            "id": 604996
+          },
+          "sceneId": 171116003,
+          "title": null,
+          "type": 3
+        },
+        {
+          "content": "",
+          "css": {
+            "top": 114,
+            "left": 37,
+            "color": "#676767",
+            "zIndex": 104,
+            "width": 214,
+            "height": 97,
+            "backgroundColor": "",
+            "opacity": 1,
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "textAlign": "left",
+            "lineHeight": 1,
+            "borderRadiusPerc": 0,
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px"
+          },
+          "id": 3528733653,
+          "num": 1,
+          "pageId": 34312,
+          "properties": {
+            "width": 214,
+            "height": 97,
+            "src": "syspic/img/69cdf535a0c1613c710f7c1f0fa872f1.png",
+            "replacement": true,
+            "id": 606352,
+            "imgStyle": {
+              "width": 216,
+              "height": 106,
+              "marginTop": "-4.5px",
+              "marginLeft": "0px"
+            }
+          },
+          "sceneId": 171116003,
+          "title": null,
+          "type": 4
+        }
+      ],
+      "scene": null,
+      "bgimgs": "",
+      "isTpl": 0
+    },
+    {
+      "id": 35585,
+      "sceneId": 2017121100024,
+      "num": 3,
+      "name": null,
+      "properties": null,
+      "elements": [
+        {
+          "content": null,
+          "css": [],
+          "id": 3805751320,
+          "num": 0,
+          "pageId": 34313,
+          "properties": {
+            "bgColor": null,
+            "imgSrc": "syspic/bg/92471b1aa2488a63004d864d2315c307.jpg",
+            "id": 605015
+          },
+          "sceneId": 171116003,
+          "title": null,
+          "type": 3
+        },
+        {
+          "content": "",
+          "css": {
+            "top": "100px",
+            "left": "120px",
+            "color": "#676767",
+            "zIndex": 107,
+            "width": 80,
+            "height": 80,
+            "backgroundColor": "",
+            "opacity": 1,
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "textAlign": "left",
+            "lineHeight": 1,
+            "borderRadiusPerc": 0,
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px"
+          },
+          "id": 4501495381,
+          "num": 1,
+          "pageId": 34313,
+          "properties": {
+            "width": "100px",
+            "height": "100px",
+            "src": "syspic/img/3a7655012fbf5729341936a0d7274bd5.png",
+            "replacement": true,
+            "id": 607300,
+            "imgStyle": {
+              "width": 80,
+              "height": 80,
+              "marginTop": "0",
+              "marginLeft": "0"
+            }
+          },
+          "sceneId": 171116003,
+          "title": null,
+          "type": 4
+        }
+      ],
+      "scene": null,
+      "bgimgs": "",
+      "isTpl": 0
+    },
+    {
+      "id": 35586,
+      "sceneId": 2017121100024,
+      "num": 4,
+      "name": null,
+      "properties": null,
+      "elements": [
+        {
+          "content": null,
+          "css": [],
+          "id": 3668601896,
+          "num": 0,
+          "pageId": 34314,
+          "properties": {
+            "bgColor": null,
+            "imgSrc": "syspic/bg/364bbd5204875e8978b3b66caa5e5b66.jpg",
+            "replacement": true,
+            "id": 605001
+          },
+          "sceneId": 171116003,
+          "title": null,
+          "type": 3
+        }
+      ],
+      "scene": null,
+      "bgimgs": "",
+      "isTpl": 0
+    },
+    {
+      "id": 35587,
+      "sceneId": 2017121100024,
+      "num": 5,
+      "name": null,
+      "properties": null,
+      "elements": [
+        {
+          "content": null,
+          "css": [],
+          "id": 3884281248,
+          "num": 0,
+          "pageId": 34315,
+          "properties": {
+            "bgColor": null,
+            "imgSrc": "syspic/bg/952c00ac79aea054de25c850dfc4766e.jpg",
+            "replacement": true,
+            "id": 605006
+          },
+          "sceneId": 171116003,
+          "title": null,
+          "type": 3
+        }
+      ],
+      "scene": null,
+      "bgimgs": "",
+      "isTpl": 0
+    }
+  ],
+  "templateData1": {
+    null
+    applyPromotion
+    :
+    0
+    applyTemplate
+    :
+    0
+    bgAudio
+    :
+    "{"url":"","type":"3"}"
+    code
+    :
+    "U812Y723ER"
+    cover
+    :
+    "default_thum.jpg"
+    createTime
+    :
+    "1512113908000"
+    createUser
+    :
+    "31"
+    dataCount
+    :
+    0
+    description
+    :
+    ""
+    endDate
+    :
+    null
+    eqcode
+    :
+    ""
+    id
+    :
+    171201013
+    image
+    :
+    null
+    isPromotion
+    :
+    0
+    isShow
+    :
+    0
+    isTpl
+    :
+    0
+    loadingLogo
+    :
+    null
+    name
+    :
+    "3wer"
+    openLimit
+    :
+    0
+    pageCount
+    :
+    0
+    pageMode
+    :
+    4
+    price
+    :
+    0
+    property
+    :
+    "{"triggerLoop":1,"slideNumber":true,"autoFlipTime":3,"shareDes":"","eqAdType":1,"hideEqAd":true}"
+    publishTime
+    :
+    1513150603
+    showCount
+    :
+    2
+    sort
+    :
+    0
+    sourceId
+    :
+    null
+    startDate
+    :
+    null
+    status
+    :
+    1
+    submitLimit
+    :
+    0
+    tagId
+    :
+    0
+    thirdCode
+    :
+    null
+    type
+    :
+    101
+    updateTime
+    :
+    "2017-12-13 15:46"
+    userLoginName
+    :
+    null
+    userName
+    :
+    null
+  },
+  "templateData2":{accessCode
+  :
+  null
+    applyPromotion
+    :
+    0
+    applyTemplate
+    :
+    0
+    bgAudio
+    :
+    "{"url":"","type":"3"}"
+    code
+    :
+    "U812Y723ER"
+    cover
+    :
+    "default_thum.jpg"
+    createTime
+    :
+    "1512113908000"
+    createUser
+    :
+    "31"
+    dataCount
+    :
+    0
+    description
+    :
+    ""
+    endDate
+    :
+    null
+    eqcode
+    :
+    ""
+    id
+    :
+    171201013
+    image
+    :
+    null
+    isPromotion
+    :
+    0
+    isShow
+    :
+    0
+    isTpl
+    :
+    0
+    loadingLogo
+    :
+    null
+    name
+    :
+    "3wer"
+    openLimit
+    :
+    0
+    pageCount
+    :
+    0
+    pageMode
+    :
+    0
+    price
+    :
+    0
+    property
+    :
+    "{"triggerLoop":1,"slideNumber":true,"autoFlipTime":3,"shareDes":"","eqAdType":1,"hideEqAd":false}"
+    publishTime
+    :
+    1513151176
+    showCount
+    :
+    2
+    sort
+    :
+    0
+    sourceId
+    :
+    null
+    startDate
+    :
+    null
+    status
+    :
+    1
+    submitLimit
+    :
+    0
+    tagId
+    :
+    0
+    thirdCode
+    :
+    null
+    type
+    :
+    101
+    updateTime
+    :
+    "2017-12-13 15:49"
+    userLoginName
+    :
+    null
+    userName
+    :
+    null}
+}

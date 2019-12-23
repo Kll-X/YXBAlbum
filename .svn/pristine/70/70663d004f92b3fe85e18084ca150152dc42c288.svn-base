@@ -1,0 +1,46 @@
+/*动画*/
+/*已有动画：
+fade,slide-fade,slide-right,slide-left
+
+*/
+@duration:0.2s;
+@fade-duration:@duration;
+@slide-fade-duration:@duration;
+@slide-right-duration:@duration;
+@slide-left-duration:@duration;
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity @fade-duration
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */
+{
+    opacity: 0
+}
+
+.slide-fade-enter-active {
+    transition: all @slide-fade-duration ease;
+}
+
+.slide-right-leave-active {
+    transition: all @slide-right-duration cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-right-enter, .slide-right-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */
+{
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.slide-left-leave-active {
+    transition: all @slide-left-duration cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-left-enter, .slide-left-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */
+{
+    transform: translateX(-100%);
+    opacity: 0;
+}

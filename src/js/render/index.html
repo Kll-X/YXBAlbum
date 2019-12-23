@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渲染</title>
+    <link rel="stylesheet" href="ori.css">
+    <link rel="stylesheet" href="animate.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <style>
+        .ctrl-panel {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: 323px;
+            margin-top: 100px
+        }
+        .ctrl-panel .pre-page,
+        .ctrl-panel .next-page {
+            cursor: pointer;
+            width: 30px;
+            height: 80px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background: #2096f9;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid #2096f9;
+            color: #fff;
+            position: absolute;
+            padding: 20px 8px;
+            margin-top: -50px
+        }
+
+        .ctrl-panel .pre-page {
+            top: -47px
+        }
+
+        .ctrl-panel .next-page {
+            top: 47px
+        }
+        .phone-view {
+            width: 320px;
+            height: 486px;
+            background-color: #fff;
+            overflow: hidden;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            z-index: 1
+        }
+        .edit_wrapper{
+            height:100%;
+        }
+        .z-current {
+            opacity: 1
+        }
+        .main-page.z-current {
+            z-index: 1;
+            display: inline-block
+        }
+        .phone-view .main-page {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            z-index: 0;
+            display: none;
+            background-color: #fff
+        }
+        .phone-view .main-page .m-img {
+            width: 100%;
+            height: 100%
+        }
+        .phone-view .main-page.z-current {
+            z-index: 1;
+            display: inline-block
+        }
+    </style>
+    <div id="wjptest" style="border: black solid 1px;">测试</div>
+    <div class="phone-view"></div>
+    <div class="ctrl-panel" >
+        <a class="pre-page" onclick="eqxiu.prePage()">上一页</a>
+        <a class="next-page" onclick="eqxiu.nextPage()">下一页</a>
+    </div>
+    <!--<div class="save" style="position: fixed;left:100px;top:200px;width:50px;height:20px">保存</div>-->
+    <input id="sceneId" type="text" style="position: fixed;left:50px;top:300px"/>
+    <script src="checkEnv.js"></script>
+    <script src="previewbegin.js"></script>
+    <script src="previewend.js"></script>
+    <script src="005eqxCommon.js"></script>
+    <script src="addComponent.js"></script>
+    <script src="eqxiu.js"></script>
+    <script src="renderPage.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>

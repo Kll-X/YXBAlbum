@@ -1,0 +1,377 @@
+<template>
+  <div class="setting" v-disable-move>
+    <div>
+      <h1>—— 请设置分享标题、描述和封面等信息 ——</h1>
+      <div class="img-container" :style="imgStyleObj">
+        <span class="btn1" @click.stop="coverChange">更换</span>
+        <span class="btn2" v-if="showEdit" @click.stop="editImgEleDef_toImgEditPage">编辑</span>
+      </div>
+      <input type="text" placeholder="请输入标题(最多15字)" maxlength="15" v-model="settingInfo_temp.title" @blur="blurAdjust">
+
+      <div class="text-area">
+        <textarea name id maxlength="35" placeholder="请输入分享描述" v-model="settingInfo_temp.desc" @blur="blurAdjust"></textarea>
+        <div class="empty_default_Wrapper" @click.stop="clearSettingInfoDesc">
+          <img src="../../../src/images/empty_default.png" alt>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1"></div>
+    <p
+      class="confirm"
+      @click.stop="confirm"
+      v-if="mode != 'myAnimation' && mode != 'myVedio' && mode != 'myArticle' "
+    >确认</p>
+    <div
+      class="myAnimation_btnBar"
+      v-if="mode === 'myAnimation' || mode === 'myVedio' || mode === 'myArticle'"
+    >
+      <p class="cancel" @click.stop="cancel">取消</p>
+      <p class="saveSettingInfo" @click.stop="saveSettingInfo(settingInfo_temp)">保存</p>
+    </div>
+  </div>
+</template>
+
+<script>
+import messageBus from "../messageBus";
+import { chooseImgs } from "@src/lib/platformAPI";
+import * as ajax from "../../lib/ajax";
+import * as utils from "../../lib/utils";
+import { mapState, mapMutations } from "vuex";
+
+export default {
+  data: function() {
+    return {
+      msg: "!",
+      ImagesInformation: { localIds: [], serverIds: [] },
+      settingInfo_temp: ""
+    };
+  },
+  created(){
+    
+  },
+  computed: {
+    imgStyleObj: function() {
+      return {
+        backgroundImage: "url(" + this.settingInfo_temp.pic + ")",
+        backgroundRepeat: "no-repeat"
+        //                    backgroundPositionX: this.settingInfo_temp.properties.imgStyle.backgroundPositionX,
+        //                    backgroundPositionY: this.settingInfo_temp.properties.imgStyle.backgroundPositionY,
+        //                    backgroundSize: this.settingInfo_temp.properties.imgStyle.backgroundSizeX + ' ' +this.settingInfo_temp.properties.imgStyle.backgroundSizeY
+      };
+    },
+    showEdit: function() {
+      let pic = this.settingInfo.pic;
+      return !(
+        pic &&
+        (pic.search("yxbsve") >= 0 || pic.search("47.107.125.18") >= 0)
+      );
+    },
+    mode: function() {
+      return this.$route.params.type;
+    },
+    ...mapState(["settingInfo", "userInfo", "currentPanel"])
+  },
+  methods: {
+    ...mapMutations(["CURRENT_PANEL", "SETTING_INFO"]),
+    blurAdjust(e){
+        setTimeout(()=>{
+            if(document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA'){
+                return
+            }
+    
+            let result = 'pc';
+            if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { //判断iPhone|iPad|iPod|iOS
+                result = 'ios'
+            }else if(/(Android)/i.test(navigator.userAgent)) {  //判断Android
+                result = 'android'
+            }
+    
+            if( result = 'ios' ){
+                document.activeElement.scrollIntoViewIfNeeded(true);
+            }
+        },400)
+    },
+    coverChange: function() {
+      let oneImagesInformation = { localIds: [], serverIds: [], ownUrls: [] };
+      chooseImgs(oneImagesInformation, "settingImgUpOK", 1);
+    },
+    editImgEleDef_toImgEditPage() {
+      messageBus.$emit(
+        "editImgEleDef_toImgEditPage_app",
+        this.settingInfo_temp
+      );
+    },
+
+    clearSettingInfoDesc: function() {
+      this.settingInfo_temp.desc = "";
+    },
+    confirm: function() {
+      document.title =  this.ori_title;
+      this.SETTING_INFO(this.settingInfo_temp);
+      this.CURRENT_PANEL("");
+      messageBus.$emit("settingConfirm");
+    },
+    cancel() {
+      document.title =  this.ori_title;
+      messageBus.$emit("saveCancel");
+    },
+    saveSettingInfo(settingInfo_temp) {
+      
+      let self = this;
+      if (settingInfo_temp.title === "") {
+        messageBus.$emit("tipCoverShow", {
+          status: 2,
+          icon: "times",
+          desc: ["请填写标题"],
+          style: {
+            tipDescPadding: "0 0.32rem 0.4rem"
+          }
+        });
+        return;
+      }
+      saveSetting()
+        .then(function(data) {
+          data = utils.processReturnObj(data);
+          if (data.resultCode === 0) {
+            messageBus.$emit("saveDone", settingInfo_temp);
+            self.CURRENT_PANEL([]);
+            document.title =  self.ori_title;
+          } else {
+            throw 1;
+          }
+        })
+        .catch(function() {
+          messageBus.$emit("saveCancel");
+          messageBus.$emit("tipCoverShow", {
+            status: 2,
+            desc: ["信息设置失败", "请稍后重试"],
+            style:{
+                tipDescPadding:'0 0.32rem 0.4rem'
+            },
+            icon: "times",
+            interval: 1500
+          });
+            document.title =  self.ori_title;
+        });
+
+      function saveSetting() {
+        if (self.mode === "myArticle") {
+          return ajax.saveArticleSetting({
+            photoId: settingInfo_temp.id,
+            //                            account: settingInfo_temp.account,
+            account: self.userInfo.account,
+            name: settingInfo_temp.title,
+            describe: settingInfo_temp.desc ? settingInfo_temp.desc : "",
+            coverImage: settingInfo_temp.pic,
+            // coverImagePer:JSON.stringify(coverImagePer),
+            url: window.location.href.split("?")[0],
+            type: 1
+          });
+        } else if (self.mode === "myVedio") {
+          return ajax.saveVedioSetting({
+            photoId: settingInfo_temp.id,
+            //                            account: settingInfo_temp.account,
+            account: self.userInfo.account,
+            name: settingInfo_temp.title,
+            describe: settingInfo_temp.desc ? settingInfo_temp.desc : "",
+            coverImage: settingInfo_temp.pic,
+            url: settingInfo_temp.url,
+            type: 2, //前端写死
+            coverImagePer: ""
+          });
+        } else {
+          return ajax.saveSceneSetting({
+            photoId: settingInfo_temp.id,
+            //                            account: settingInfo_temp.account,
+            account: self.userInfo.account,
+            name: settingInfo_temp.title,
+            describe: settingInfo_temp.desc ? settingInfo_temp.desc : "",
+            coverImage: settingInfo_temp.pic,
+            url: settingInfo_temp.url
+          });
+        }
+      }
+    }
+  },
+  mounted: function() {
+    this.ori_title = document.title;
+    document.title = '设置';
+    let self = this;
+    //从store中获得场景信息的拷贝
+    self.settingInfo_temp = Object.assign(this.settingInfo);
+    messageBus.$on("settingImgUpOK", function(data) {
+      if (data.ownUrls[0].search("http") !== -1) {
+        self.settingInfo_temp.pic = self.settingInfo_temp.properties.src =
+          data.ownUrls[0];
+        self.SETTING_INFO(self.settingInfo_temp);
+      }
+    });
+    messageBus.$on("sendBase64AndGetUrl", function(base64Str) {
+      ajax
+        .sendBase64AndGetUrl({ base64picStr: base64Str })
+        .then(function(data) {
+          data = utils.processReturnObj(data);
+          if (data.resultCode === 0) {
+            self.settingInfo_temp.pic = self.settingInfo_temp.properties.src =
+              data.data;
+            self.SETTING_INFO(self.settingInfo_temp);
+          } else {
+            throw 1;
+          }
+        })
+        .catch(function(error) {
+          messageBus.$emit("tipCoverShow", {
+            status: 2,
+            desc: ["服务器繁忙", "请再次编辑并提交"],
+            icon: "times",
+            style:{
+                tipDescPadding:'0 0.32rem 0.4rem'
+            }
+          });
+        })
+        .always(function() {
+          self.CURRENT_PANEL("");
+          // self.CURRENT_PANEL([{popupName:'setting'}]);
+        });
+    });
+  },
+  beforeDestroy() {
+    document.title = this.ori_title;
+    messageBus.$off("sendBase64AndGetUrl");
+    messageBus.$off("settingImgUpOK");
+  }
+};
+</script>
+
+<style scoped lang="less">
+.setting {
+  background-color: #e8e8e8;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 140;
+  overflow-y: scroll;
+  padding: 4vh 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .tips {
+    margin-top: 1vh;
+    color: red;
+    font-size: 12px;
+  }
+  div {
+    h1 {
+      color: #0080cc;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .img-container {
+      height: 36vw;
+      width: 36vw;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      margin: 0 auto 3vh;
+      .btn1 {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        padding: 4px 20px;
+        transform: translateX(-50%);
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+      }
+      .btn2 {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translateX(-50%);
+        padding: 4px 20px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+      }
+    }
+
+    > input {
+      height: 10vw;
+      width: 94%;
+      font-size: 14px;
+      border-radius: 5px;
+      border: none;
+      margin: 0 3% 3vh;
+    }
+    .text-area {
+      width: 94%;
+      position: relative;
+      margin: 0 auto;
+      textarea {
+        min-width: 100%;
+        max-width: 100%;
+        height: 56vw;
+        font-size: 14px;
+        line-height: 1.5;
+        border-radius: 4px;
+        padding-top: 2vw;
+        padding-right: 7vw;
+      }
+      .empty_default_Wrapper {
+        position: absolute;
+        right: -2vw;
+        top: 0vw;
+        padding: 2.1vw 5.1vw 3vw 5vw;
+        img {
+          width: 5.5vw;
+          height: 5.5vw;
+        }
+      }
+    }
+  }
+  .confirm {
+    background-color: #30a6ec;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    font-size: 16px;
+  }
+  .myAnimation_btnBar {
+    /*position: absolute;*/
+    /*left:0;*/
+    /*bottom:0;*/
+    width: 100%;
+    height: 50px;
+    z-index: 140;
+    display: flex;
+    justify-content: space-between;
+    .cancel {
+      background-color: #30a6ec;
+      text-align: center;
+      width: 48%;
+      height: 50px;
+      line-height: 50px;
+      color: white;
+      font-size: 16px;
+    }
+    .saveSettingInfo {
+      background-color: #30a6ec;
+      text-align: center;
+      width: 48%;
+      height: 50px;
+      line-height: 50px;
+      color: white;
+      font-size: 16px;
+    }
+  }
+}
+</style>

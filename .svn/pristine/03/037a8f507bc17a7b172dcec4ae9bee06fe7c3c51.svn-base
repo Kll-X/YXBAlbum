@@ -1,0 +1,402 @@
+{
+  "success": true,
+  "code": 200,
+  "msg": "操作成功",
+  "obj": {
+    "id": 171204011,
+    "name": "caoyuan",
+    "createUser": "47",
+    "type": 101,
+    "pageMode": 0,
+    "image": {
+      "imgSrc": "default_thum.jpg",
+      "lastPageId": 0,
+      "hideEqAd": 0,
+      "isAdvancedUser": 0,
+      "bgAudio": null
+    },
+    "property": "{\"triggerLoop\":true,\"slideNumber\":true,\"autoFlipTime\":3,\"shareDes\":\"\",\"eqAdType\":1,\"hideEqAd\":false}",
+    "timeout": "",
+    "timeout_url": "",
+    "accessCode": null,
+    "cover": "default_thum.jpg",
+    "bgAudio": "null",
+    "isTpl": 0,
+    "isPromotion": 0,
+    "status": 1,
+    "openLimit": 0,
+    "startDate": null,
+    "endDate": null,
+    "updateTime": 1426045746000,
+    "createTime": 1426572693000,
+    "publishTime": 1426572693000,
+    "applyTemplate": 0,
+    "applyPromotion": 0,
+    "sourceId": null,
+    "code": "U81294N72B",
+    "description": "caoyuan",
+    "sort": 0,
+    "pageCount": 0,
+    "dataCount": 0,
+    "showCount": 0,
+    "eqcode": "",
+    "userLoginName": null,
+    "userName": null
+  },
+  "map": null,
+  "list": [
+    {
+      "id": 29992,
+      "sceneId": 171204011,
+      "num": 1,
+      "name": null,
+      "properties": null,
+      "elements": [
+        {
+          "content": null,
+          "css": [],
+          "id": 4423887521,
+          "num": 0,
+          "pageId": 29992,
+          "properties": {
+            "bgColor": null,
+            "imgSrc": "syspic\/bg\/b1eea2fc53213064e3fab507138890fe.jpg",
+            "id": 604990
+          },
+          "sceneId": 171204011,
+          "title": null,
+          "type": 3
+        },
+        {
+          "content": "<span style=\"font-family: FangSong; font-size: 48px; font-weight: bold; font-style: italic; text-decoration-line: underline;\">\u70b9\u51fb\u6b64\u5904\u8fdb\u884c\u7f16\u8f91<\/span>",
+          "css": {
+            "top": 42,
+            "left": 0,
+            "color": "rgba(20,1,8,1)",
+            "zIndex": 101,
+            "width": 320,
+            "height": 110,
+            "fontSize": 24,
+            "backgroundColor": "",
+            "opacity": 1,
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "textAlign": "left",
+            "lineHeight": 1,
+            "borderRadiusPerc": 0,
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "fontFamily": "FangSong",
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px"
+          },
+          "id": 2089918447,
+          "num": 1,
+          "pageId": 29992,
+          "properties": {
+          },
+          "sceneId": 171204011,
+          "title": null,
+          "type": "2",
+          "fonts": {
+            "FangSong": ""
+          }
+        },
+        {
+          "content": "",
+          "css": {
+            "top": 202.98611450195,
+            "left": 40.989624023438,
+            "color": "#676767",
+            "zIndex": 102,
+            "width": 166,
+            "height": 166,
+            "backgroundColor": "",
+            "opacity": 1,
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "textAlign": "left",
+            "lineHeight": 1,
+            "borderRadiusPerc": 0,
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px"
+          },
+          "id": 2001182512,
+          "num": 1,
+          "pageId": 29992,
+          "properties": {
+            "width": 166,
+            "height": 166,
+            "src": "syspic\/img\/a1a067e304828795106b3280767b14b2.png",
+            "replacement": false,
+            "id": 607550,
+            "imgStyle": {
+              "width": 166,
+              "height": 166,
+              "marginTop": "0px",
+              "marginLeft": "0px"
+            }
+          },
+          "sceneId": 171204011,
+          "title": null,
+          "type": 4
+        }
+      ],
+      "scene": null
+    },
+    {
+      "id": 29993,
+      "sceneId": 171204011,
+      "num": 2,
+      "name": null,
+      "properties": null,
+      "elements": [
+        {
+          "content": "",
+          "css": {
+            "top": 44,
+            "left": 86,
+            "zIndex": "1",
+            "width": 147,
+            "height": 144,
+            "backgroundColor": "",
+            "opacity": 1,
+            "color": "#676767",
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "lineHeight": 1,
+            "borderRadius": "82px",
+            "transform": "rotateZ(0deg)",
+            "borderRadiusPerc": 100,
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "borderBottomRightRadius": "82px",
+            "borderBottomLeftRadius": "82px",
+            "borderTopRightRadius": "82px",
+            "borderTopLeftRadius": "82px"
+          },
+          "id": 2555065541,
+          "num": 1,
+          "pageId": "29993",
+          "properties": {
+            "width": 147,
+            "height": 144,
+            "src": "syspic\/page\/yq0KEVVf8xSAW6YGAAFILTTQVRE570.gif",
+            "imgStyle": {
+              "width": 186,
+              "height": 144,
+              "marginTop": "0px",
+              "marginLeft": "-19.5px"
+            },
+            "anim": [
+              {
+                "type": 4,
+                "direction": 0,
+                "duration": 2,
+                "delay": 1,
+                "countNum": 1
+              },
+              {
+                "type": 7,
+                "direction": 0,
+                "duration": 2,
+                "delay": 0,
+                "countNum": 1
+              }
+            ]
+          },
+          "sceneId": 171204011,
+          "type": 4
+        },
+        {
+          "css": {
+            "zIndex": "2"
+          },
+          "id": 2759455808,
+          "num": 0,
+          "pageId": "29993",
+          "properties": {
+            "bgColor": "#000000"
+          },
+          "sceneId": 171204011,
+          "type": 3
+        },
+        {
+          "content": "<div style=\"text-align: center;\"><span style=\"color: inherit; line-height: inherit; background-color: initial;\"><font size=\"3\"><b>KEEP OUT &nbsp; &nbsp; KEEP OUT &nbsp; &nbsp; KEEP OUT<\/b><\/font><\/span><\/div>",
+          "css": {
+            "top": 225,
+            "left": 0,
+            "zIndex": "3",
+            "lineHeight": 1,
+            "height": 45,
+            "backgroundColor": "rgba(255,203,41,1)",
+            "opacity": 1,
+            "color": "rgba(0,0,0,1)",
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "borderRadiusPerc": 0,
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "width": 320,
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px"
+          },
+          "id": 7633175594,
+          "num": 1,
+          "pageId": "29993",
+          "properties": {
+            "width": 320,
+            "height": 45,
+            "anim": [
+              {
+                "type": 1,
+                "direction": 0,
+                "duration": 1,
+                "delay": 0,
+                "countNum": 1
+              },
+              {
+                "type": 16,
+                "direction": 0,
+                "duration": 1,
+                "delay": 0,
+                "countNum": 1
+              },
+              {
+                "type": 1,
+                "direction": 0,
+                "duration": 1,
+                "delay": 0,
+                "countNum": 1
+              }
+            ]
+          },
+          "sceneId": 171204011,
+          "type": 2
+        },
+        {
+          "content": "<div style=\"text-align: center;\"><span style=\"color: inherit; line-height: inherit; background-color: initial;\"><font size=\"7\">WARING<\/font><\/span><\/div>",
+          "css": {
+            "top": 287,
+            "left": 0,
+            "zIndex": "4",
+            "lineHeight": 1,
+            "height": 62,
+            "backgroundColor": "",
+            "opacity": 1,
+            "color": "rgba(255,203,41,1)",
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "borderRadiusPerc": 0,
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0
+          },
+          "id": 349850086,
+          "num": 1,
+          "pageId": "29993",
+          "properties": {
+            "anim": [
+              {
+                "type": 1,
+                "direction": 3,
+                "duration": 2,
+                "delay": 1,
+                "countNum": 1
+              }
+            ]
+          },
+          "sceneId": 171204011,
+          "type": 2
+        },
+        {
+          "content": "<div style=\"text-align: center;\"><font size=\"5\">ICBM <\/font><font size=\"3\">\u90aa\u7075\u9000\u6563 \u5c0f\u5267\u573a<\/font><\/div>",
+          "css": {
+            "top": 345,
+            "left": 0,
+            "zIndex": "5",
+            "lineHeight": "1.0",
+            "height": 49,
+            "backgroundColor": "",
+            "opacity": 1,
+            "color": "rgba(255,203,41,1)",
+            "borderWidth": 0,
+            "borderStyle": "solid",
+            "borderColor": "rgba(0,0,0,1)",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+            "borderRadius": "0px",
+            "transform": "rotateZ(0deg)",
+            "borderRadiusPerc": 0,
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "boxShadow": "0px 0px 0px rgba(0,0,0,0.5)",
+            "boxShadowDirection": 0,
+            "boxShadowSize": 0,
+            "width": 320
+          },
+          "id": 1709014359,
+          "num": 1,
+          "pageId": "29993",
+          "properties": {
+            "width": 320,
+            "height": 49,
+            "anim": [
+              {
+                "type": 1,
+                "direction": 3,
+                "duration": 2,
+                "delay": 1.6,
+                "countNum": 1
+              }
+            ]
+          },
+          "sceneId": 171204011,
+          "type": 2
+        }
+      ],
+      "scene": null
+    }
+  ]
+}

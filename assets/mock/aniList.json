@@ -1,0 +1,177 @@
+{
+    "resultCode": 0,
+    "msg": "success",
+    "data": {
+        "count": 22,
+        "templateList": [
+            {
+                "id": 171108002,
+                "name": "家和万视新—宽带电视",
+                "url": "http://yxbsve.mmarket.com/v/U811S69474",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201711/5a02ac6e631d8_small.png",
+                "QRCode": "U811S69474",
+                "status": 1,
+                "count": 11,
+                "createTime": 1510125717000,
+                "describe": ""
+            },
+            {
+                "id": 171009006,
+                "name": "营销宝",
+                "url": "http://yxbsve.mmarket.com/v/U81094K753",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201710/59dad6b002b49.png",
+                "QRCode": "U81094K753",
+                "status": 1,
+                "count": 66,
+                "createTime": 1507516787000,
+                "describe": ""
+            },
+            {
+                "id": 171009007,
+                "name": "下载夺流量",
+                "url": "http://yxbsve.mmarket.com/v/U81052U3B6",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201710/59dad6b035367.png",
+                "QRCode": "U81052U3B6",
+                "status": 1,
+                "count": 78,
+                "createTime": 1507516779000,
+                "describe": ""
+            },
+            {
+                "id": 171009008,
+                "name": "主要比手快",
+                "url": "http://yxbsve.mmarket.com/v/U8105T5LF4",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201710/59dad6b06c798.png",
+                "QRCode": "U8105T5LF4",
+                "status": 1,
+                "count": 77,
+                "createTime": 1507516769000,
+                "describe": ""
+            },
+            {
+                "id": 171009005,
+                "name": "激情弹幕",
+                "url": "http://yxbsve.mmarket.com/v/U81077MHA3",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201710/59dad6afb555b.png",
+                "QRCode": "U81077MHA3",
+                "status": 1,
+                "count": 87,
+                "createTime": 1507516800000,
+                "describe": ""
+            },
+            {
+                "id": 170930036,
+                "name": "用我的方式过十一",
+                "url": "http://yxbsve.mmarket.com/v/U809DTF27R",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201709/59cfb91d97707.png",
+                "QRCode": "U809DTF27R",
+                "status": 1,
+                "count": 181,
+                "createTime": 1507516812000,
+                "describe": ""
+            },
+            {
+                "id": 171008002,
+                "name": "王者荣耀开黑季",
+                "url": "http://yxbsve.mmarket.com/v/U8107L9352",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201709/59cf586528289_small.png",
+                "QRCode": "U8107L9352",
+                "status": 1,
+                "count": 247,
+                "createTime": 1507451692000,
+                "describe": ""
+            },
+            {
+                "id": 170930031,
+                "name": "大话西游开学礼",
+                "url": "http://yxbsve.mmarket.com/v/U80930764Y74878X",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201709/59cf57d00cd82_small.png",
+                "QRCode": "U80930764Y74878X",
+                "status": 1,
+                "count": 35,
+                "createTime": 1507443563000,
+                "describe": ""
+            },
+            {
+                "id": 171008001,
+                "name": "极品芝麻官",
+                "url": "http://yxbsve.mmarket.com/v/U81008828E5H9996",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201709/59cf590177b76_small.png",
+                "QRCode": "U81008828E5H9996",
+                "status": 1,
+                "count": 71,
+                "createTime": 1507450544000,
+                "describe": ""
+            },
+            {
+                "id": 170912027,
+                "name": "139邮箱电子发票",
+                "url": "http://yxbsve.mmarket.com/v/U8095H3XE5",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201709/59b7a966607a6.png",
+                "QRCode": "U8095H3XE5",
+                "status": 1,
+                "count": 1653,
+                "createTime": 1506762098000,
+                "describe": ""
+            },
+            {
+                "id": 170920038,
+                "name": "和通讯录",
+                "url": "http://yxbsve.mmarket.com/v/U80956W476",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201709/59c21fd7b89ff.png",
+                "QRCode": "U80956W476",
+                "status": 1,
+                "count": 1838,
+                "createTime": 1506762098000,
+                "describe": ""
+            },
+            {
+                "id": 170612206,
+                "name": "顶级创客的汇聚盛宴 点击围观",
+                "url": "http://yxbsve.mmarket.com/v/U8063C6U42",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201706/593f5128a22e5_small.jpg",
+                "QRCode": "U8063C6U42",
+                "status": 1,
+                "count": 3321,
+                "createTime": 1506395037000,
+                "describe": ""
+            },
+            {
+                "id": 170824003,
+                "name": "中国移动宽带电视",
+                "url": "http://yxbsve.mmarket.com/v/U808MEX4S8",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201708/599e4cde06428_small.jpg",
+                "QRCode": "U808MEX4S8",
+                "status": 1,
+                "count": 4513,
+                "createTime": 1506395037000,
+                "describe": ""
+            },
+            {
+                "id": 170711010,
+                "name": "Mobile Market全国交流会议",
+                "url": "http://yxbsve.mmarket.com/v/U80722FG5S",
+                "type": 1,
+                "picture": "http://yxbsve.mmarket.com/Uploads/pic/3/201707/5965d718d4c83.png",
+                "QRCode": "U80722FG5S",
+                "status": 1,
+                "count": 2482,
+                "createTime": 1506395037000,
+                "describe": ""
+            }
+        ]
+    }
+}

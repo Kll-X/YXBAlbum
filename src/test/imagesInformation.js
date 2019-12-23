@@ -1,0 +1,21 @@
+let imagesInformation = {
+    localIds: ["http://47.107.125.18/Uploads/syspic/img/7202d0ef95cdd988500b35b752a248ba_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/d9f0d5c58931f2e0dca9ff7e699c7cc9_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/6c08907ce17e99bc7d76bd07ea7f1d77_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/c48d6910bb4767ff2f300be0f7ac650d_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/9c899023976a2673518f4d7b26902255_thumb.gif",
+        "http://47.107.125.18/Uploads/syspic/img/ee793a424265440ad2e088522c2040a6_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/f6802f216a4dfded8c7908e4af9e0dc2_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/12412f3a3d5fce8013b35aa40dacbfb9_thumb.png"
+    ],
+    serverIds: ["http://47.107.125.18/Uploads/syspic/img/7202d0ef95cdd988500b35b752a248ba_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/d9f0d5c58931f2e0dca9ff7e699c7cc9_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/6c08907ce17e99bc7d76bd07ea7f1d77_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/c48d6910bb4767ff2f300be0f7ac650d_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/9c899023976a2673518f4d7b26902255_thumb.gif",
+        "http://47.107.125.18/Uploads/syspic/img/ee793a424265440ad2e088522c2040a6_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/f6802f216a4dfded8c7908e4af9e0dc2_thumb.png",
+        "http://47.107.125.18/Uploads/syspic/img/12412f3a3d5fce8013b35aa40dacbfb9_thumb.png"
+    ],
+    sceneId: '171116004'
+}

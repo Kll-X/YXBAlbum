@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <title>美秀相册</title>
+
+    <script type="text/javascript">
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audioAutoPlay('audio1');
+        }, false);
+        function audioAutoPlay(id) {//全局控制播放函数
+            let myAudio = document.querySelector('#audio1');
+            myAudio.play();
+        }
+    </script>
+    <link rel="stylesheet" href="./css/mmShow.css">
+    <link rel="stylesheet" href="./css/render0208.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/spinners.css">
+    <script src="vendor/jquery-3.2.1-min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="vendor/vconsole.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+</head>
+<body>
+<audio id="audio1" class="audio-ios" src="" preload="" loop="loop"></audio>
+<audio id="audioTemp" class="audio-temp" src="" preload="" loop="loop"></audio>
+<audio id="audio" class="audio-android" preload="" loop="loop"></audio>
+
+<div id="app">
+</div>
+
+<script type="text/javascript" src="./manifest.5a335.js"></script><script type="text/javascript" src="./vendor.17c10.js"></script><script type="text/javascript" src="./bundle.d08b8.js"></script></body>
+</html>

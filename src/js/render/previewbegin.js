@@ -1,0 +1,637 @@
+import {mobilecheck} from "./checkEnv.js"
+function clickAnim() {
+    var i = 0,
+        j = 0,
+        m = 0;
+    $(".z-currentPage .inside").each(function () {
+        $(this).hide();
+    });
+    $(".z-currentPage").on("click", function () {
+        i++;
+        $(".z-currentPage .inside").each(function () {
+            j++;
+            if (i == j) {
+                $(this).show();
+            }
+        });
+        j = 0;
+        // console.log(i + "-" + $(".z-currentPage .inside").length);
+        if (i > $(".z-currentPage .inside").length) {
+            eqxiu.nextPage();
+            i = 0;
+        }
+    });
+}
+
+(function (a) {
+    function b() {
+        var a = {};
+        this.addInterval = function (b, c) {
+            a[b] = c
+        }, this.deleteInterval = function (b) {
+            a[b] && (clearInterval(a[b]), delete a[b])
+        }, this.clearInterval = function () {
+            for (var b in a) this.deleteInterval(b)
+        };
+        var b = [{
+            value: 1,
+            desc: "轮播",
+            name: "slide"
+        }, {
+            value: 2,
+            desc: "下落",
+            name: "bars"
+        }, {
+            value: 3,
+            desc: "百页窗",
+            name: "blinds"
+        }, {
+            value: 4,
+            desc: "消隐",
+            name: "blocks"
+        }, {
+            value: 5,
+            desc: "渐变",
+            name: "blocks2"
+        }, {
+            value: 9,
+            desc: "梳理",
+            name: "zip"
+        }, {
+            value: 11,
+            desc: "翻转",
+            name: "bars3d"
+        }, {
+            value: 13,
+            desc: "立方体",
+            name: "cube"
+        }, {
+            value: 14,
+            desc: "棋盘",
+            name: "tiles3d"
+        }, {
+            value: 16,
+            desc: "飞出",
+            name: "explode"
+        }];
+        this.getPicStyle = function (a) {
+            if (void 0 === a) return b;
+            for (var c = 0; c < b.length; c++)
+                if (a === b[c].value) return b[c]
+        }
+    }
+
+    a.utilPictures = new b
+})(window);
+
+(function (a) {
+    function b() {
+        var a = {
+                CLICK: {
+                    name: "click",
+                    value: 1,
+                    title: "点击"
+                },
+                SHAKE: {
+                    name: "shake",
+                    value: 2,
+                    title: "摇一摇"
+                }
+            },
+            b = {
+                SHOW: {
+                    name: "show",
+                    value: 1
+                },
+                HIDE: {
+                    name: "hide",
+                    value: 2
+                },
+                RANDOMEVENT: {
+                    name: "randomEvent",
+                    value: 3
+                }
+            };
+        this.getSendType = function (b) {
+            if (void 0 === b) return a;
+            for (var c in a)
+                if (b === a[c].value) return a[c];
+            return null
+        }, this.getHandleType = function (a) {
+            if (void 0 === a) return b;
+            for (var c in b)
+                if (a === b[c].value) return b[c];
+            return null
+        }
+    }
+
+    a.utilTrigger = new b
+})(window);
+
+(function (a, b) {
+    function c() {
+        var a, c, d, e = [];
+        b("#media");
+        this.addAudio = function (a, f) {
+            var g = new Audio;
+            g.src = f, e.push({
+                elem: a,
+                audio: g
+            }), b(g).bind("ended", function () {
+                c = !1, d()
+            })
+        }, this.play = function (b, f, g) {
+            var h;
+            d = f;
+            for (var i = 0; i < e.length; i++) e[i].elem == b && (h = e[i].audio);
+            a == h && c ? (h.pause(), c = !1, f()) : a != h || c ? (a && a.pause(), h.currentTime = 0, h.play(), g(), c = !0, a = h) : (h.play(), c = !0, g())
+        }, this.pause = function () {
+            a && (a.pause(), c = !1)
+        }
+    }
+
+    a.utilSound = new c
+})(window, $);
+
+(function () {
+    window.eqxiuSvg = {
+        NAMESPACE: "http://www.w3.org/2000/svg",
+        SYMBOLS: {},
+        boundingBox: function (a) {
+            var b, c = a.parentNode,
+                d = document.createElementNS(eqxiuSvg.NAMESPACE, "svg");
+            return d.setAttribute("width", "0"), d.setAttribute("height", "0"), d.setAttribute("style", "visibility: hidden; position: absolute; left: 0; top: 0;"), d.appendChild(a), document.body.appendChild(d), b = a.getBBox(), c ? c.appendChild(a) : d.removeChild(a), document.body.removeChild(d), b
+        },
+        pointsToPolygon: function (a) {
+            for (var b = []; a.length >= 2;) b.push(a.shift() + "," + a.shift());
+            return b.join(" ")
+        },
+        symbol: function (a, b, c) {
+            var d = c ? c : "#555",
+                e = eqxiuSvg.SYMBOLS[a],
+                f = '<g fill="' + d + '" id="path_' + b + '">' + e + "</g>";
+            return f
+        },
+        ShapeFromType: function (a, b, c, d, e) {
+            return b || (b = 64), c || (c = 64), /symbols\-/.test(a) ? eqxiuSvg.symbol(a.replace(/^symbols\-/, ""), d, e) : "rect" == a ? eqxiuSvg.rect(b, c) : "circle" == a ? eqxiuSvg.ellipse(b, c) : "diamond" == a ? eqxiuSvg.polygon(b, c, 4) : "octagon" == a ? eqxiuSvg.polygon(b, c, 8) : "triangle-up" == a ? eqxiuSvg.triangleUp(b, c) : "triangle-down" == a ? eqxiuSvg.triangleDown(b, c) : "triangle-left" == a ? eqxiuSvg.triangleLeft(b, c) : "triangle-right" == a ? eqxiuSvg.triangleRight(b, c) : "arrow-up" == a ? eqxiuSvg.arrowUp(b, c) : "arrow-down" == a ? eqxiuSvg.arrowDown(b, c) : "arrow-left" == a ? eqxiuSvg.arrowLeft(b, c) : "arrow-right" == a ? eqxiuSvg.arrowRight(b, c) : void 0;
+        },
+        rect: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "rect");
+            return c.setAttribute("width", a), c.setAttribute("height", b), c
+        },
+        ellipse: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "ellipse");
+            return c.setAttribute("rx", a / 2), c.setAttribute("ry", b / 2), c.setAttribute("cx", a / 2), c.setAttribute("cy", b / 2), c
+        },
+        triangleUp: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon");
+            return c.setAttribute("points", eqxiuSvg.pointsToPolygon([a / 2, 0, a, b, 0, b])), c
+        },
+        triangleDown: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon");
+            return c.setAttribute("points", eqxiuSvg.pointsToPolygon([0, 0, a, 0, a / 2, b])), c
+        },
+        triangleLeft: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon");
+            return c.setAttribute("points", eqxiuSvg.pointsToPolygon([0, b / 2, a, 0, a, b])), c
+        },
+        triangleRight: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon");
+            return c.setAttribute("points", eqxiuSvg.pointsToPolygon([a, b / 2, 0, b, 0, 0])), c
+        },
+        arrowUp: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon");
+            return c.setAttribute("points", eqxiuSvg.pointsToPolygon([.5 * a, 0, a, .5 * b, .7 * a, .5 * b, .7 * a, b, .3 * a, b, .3 * a, .5 * b, 0, .5 * b, .5 * a, 0])), c
+        },
+        arrowDown: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon");
+            return c.setAttribute("points", eqxiuSvg.pointsToPolygon([.5 * a, b, a, .5 * b, .7 * a, .5 * b, .7 * a, 0, .3 * a, 0, .3 * a, .5 * b, 0, .5 * b, .5 * a, b])), c
+        },
+        arrowLeft: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon");
+            return c.setAttribute("points", eqxiuSvg.pointsToPolygon([a, .3 * b, .5 * a, .3 * b, .5 * a, 0, 0, .5 * b, .5 * a, b, .5 * a, .7 * b, a, .7 * b, a, .3 * b])), c
+        },
+        arrowRight: function (a, b) {
+            var c = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon");
+            return c.setAttribute("points", eqxiuSvg.pointsToPolygon([0, .3 * b, .5 * a, .3 * b, .5 * a, 0, a, .5 * b, .5 * a, b, .5 * a, .7 * b, 0, .7 * b])), c
+        },
+        polygon: function (a, b, c) {
+            var d = document.createElementNS(eqxiuSvg.NAMESPACE, "polygon"),
+                e = [];
+            if (3 === c) e = [a / 2, 0, a, b, 0, b];
+            else if (c > 3)
+                for (var f = a / 2, g = b / 2, h = 0; c > h; h++) {
+                    var i = f + f * Math.cos(2 * Math.PI * h / c),
+                        j = g + g * Math.sin(2 * Math.PI * h / c);
+                    i = Math.round(10 * i) / 10, j = Math.round(10 * j) / 10, e.push(i), e.push(j)
+                }
+            return d.setAttribute("points", eqxiuSvg.pointsToPolygon(e)), d
+        }
+    }
+})();
+
+/**
+ * yxbCore定义
+ */
+(function(window, b) {
+    var templateParser;
+    function wrapWindow(window) {
+        function wrapObj(obj, key, initFunciton) {
+            return obj[key] || (obj[key] = initFunciton())
+        }
+
+        var yxbCore = wrapObj(window, "yxbCore", Object);
+        return wrapObj(yxbCore, "templateParser", function () {
+            var obj = {};
+            return function (attributeName, initFunc) {
+                if ("hasOwnProperty" === attributeName) throw new Error("hasOwnProperty is not a valid name");
+                initFunc && obj.hasOwnProperty(attributeName) && (obj[attributeName] = null);
+                return wrapObj(obj, attributeName, initFunc);
+            }
+        })
+    }
+
+    function d(b) {
+        templateParser = wrapWindow(window)
+    }
+
+    var e = window.yxbCore || (window.yxbCore = {});
+    d(e)
+})(window, document);
+
+(function () {
+    var a = !0,
+        b = !0;
+
+    yxbCore.playVideo = function (c) {
+        if (c && c.bgAudio) {
+            var d = $("#media"),
+                e = $("#audio_btn"),
+                //f = "";
+                f = ($("#yinfu"), "");
+            c.bgAudio.url ? f = 0 === c.bgAudio.url.indexOf("http://") ? c.bgAudio.url : PREFIX_FILE_HOST + c.bgAudio.url : !c.bgAudio.url && c.bgAudio.src && (f = 0 === c.bgAudio.src.indexOf("http://") ? c.bgAudio.src : PREFIX_FILE_HOST + c.bgAudio.src), d.attr("src", f), e.addClass("video_exist"), d.bind("canplay", function () {
+                d.get(0).play()
+            }).bind("play", function () {
+                e.addClass("rotate")
+            }).bind("pause", function (a) {
+                e.removeClass("rotate")
+            });
+            var g = mobilecheck() ? "touchend" : "click";
+            $("#audio_btn").show().on(g, function (b) {
+                b.cancelBubble = !0, b.stopPropagation(), $(this).hasClass("rotate") ? (a = !1, d.get(0).pause()) : (d.get(0).play(), a = !0, utilSound.pause())
+            })
+        }
+        $("#nr #page1").on("mousedown touchstart", function () {
+            if (mobilecheck() && !isWeixin() && b) {
+                var a = $("#nr .z-currentPage .m-img"),
+                    c = parseInt(a.attr("id").substring(4), 10);
+                b && 1 === c && window.completeEffect(a) && (b = !1, window.scene.bgAudio && $("#media").get(0).play())
+            }
+        })
+    };
+
+    yxbCore.executePlay = function () {
+        a && $("#media").get(0).play()
+    };
+
+    yxbCore.executePause = function () {
+        a && $("#media").get(0).pause()
+    }
+})();
+
+//登录相关
+(function () {
+    function alertTip(text,callBack) {
+        $(".baffle").hide();
+        $(".baffleTransparent").hide();
+        $('.alertTipsContent').html(text); //其他情况
+        $('.baffleHaze').show();
+        $('.btnClose').off().on({
+            'click':function () {
+                $('.baffleHaze').hide();
+                if(callBack){
+                    callBack();
+                }
+            }
+        })
+    };
+    function mmLoginJump() {
+        window.androidmm.unauthLogin(window.location.href);
+    }
+    function mmIndexJump() {
+        window.location.href = "mm://index"
+    }
+    try {
+        yxbCore.authInfo = {
+            // id: scene.id
+            //wjpignore
+        };
+    }finally {
+        yxbCore.authInfo = {}
+    }
+    if(window.androidmm){
+        var loginUrl =  location.host === '221.179.8.172' ? '221.179.8.172' : '221.179.8.170:8080';
+        loginUrl = 'http://' + loginUrl + '/t.do?requestid=get_Login_User_phone';
+        $.ajax({
+            type: 'GET',
+            url: loginUrl,
+            dataType: 'json'
+        }).success(function(data) {
+            function parseJSON(data) {
+                var jsonc = typeof data == "string" ? JSON.parse(data) : data;
+                return jsonc;
+            }
+            data = parseJSON(data);
+            if(data.retcode === 0){
+                yxbCore.authInfo.phone = data.bindMsisdn;
+            }else if(data.retcode === -107){
+                //    未登录
+                var text = '您好，请先登录吧~~';
+                // alertTip(text,mmLoginJump);
+                mmLoginJump();
+            }else if(data.retcode === -208){
+                //    异网用户登录：-208
+                var text = '很抱歉，您非本次活动的目标用户，感谢您的关注！去首页看看更多精彩内容吧~~';
+                // alertTip(text,mmIndexJump);
+                mmIndexJump();
+            }
+        });
+    } else{
+        var getPtime = 500;
+        var getPtimenum = 1;
+
+        function checkIsExistcloseNum() {
+
+            getPtime = getPtime + 500;
+            getPtimenum = getPtimenum + 1;
+            // window.clearInterval(c);
+            // c = setInterval(checkIsExist, getPtime);
+        }
+
+        function checkIsExistOriginPage() {
+            var _datas = {
+                "data": {
+                    "msgId": uuidsen
+                },
+                "api": "cmpassport/getPhone.do"
+            };
+
+            $.ajax({
+                dataType: 'json',
+                type: "POST",
+                url: urlss,
+                // async: true,
+                headers: {
+                    Accept: "application/json; charset=utf-8"
+                },
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                // contentType: 'application/json',
+                data: _datas,
+                cache: false,
+                success: function (_resdata) {
+                    var _rtmsg = typeof _resdata === 'string' ? JSON.parse(_resdata) : _resdata;
+                    if (_rtmsg.resultCode === 0) {
+
+                        yxbCore.authInfo.phone = _rtmsg.data.phone;
+                        $('.authBaffle').hide();
+                    } else {
+                        if (getPtimenum < 5) {
+                            setTimeout(checkIsExistOriginPage);
+                        }
+                    }
+                    checkIsExistcloseNum()
+                },
+                error: function () {
+                    // alert("拿不到");
+                    checkIsExistcloseNum();
+                    setTimeout(checkIsExistOriginPage);
+                    $('.authBaffle').hide();
+                }
+            });
+        }
+
+        function mainFuncOriginPage() {
+            setTimeout(checkIsExistOriginPage, getPtime);
+        }
+
+        // var senphone = getUrlParam("phone") || yxbCore.authInfo.phone || "";
+        // var senid = getUrlParam("id") || scene.id;
+        //wjptest
+        var senphone = "";
+        var senid = $("#sceneId").val();
+
+        if (senphone === null && senid === null) {
+            // $('.authBaffle').show();
+            acquire('000011', '1', '统一认证', uuidsen);
+
+            setTimeout(function () {
+                mainFuncOriginPage();
+            });
+        }
+    }
+})();
+
+//弹窗
+(function () {
+    // var templateHtml =
+    //     '<div class="baffle">'+
+    //         '<div class="loading-con">'+
+    //         '<img src="../assets/images/puff.svg" style="display: block;">'+
+    //         '</div>'+
+    //     '</div>'+
+    //     '<div class="baffleTransparent"></div>'+
+    //     '<div class="baffleHaze">' +
+    //     '<div class="baffleHazeInner">' +
+    //     '<div class="alertTipsBg">' +
+    //     '<div class="alertTipsContent"></div>' +
+    //     '</div>' +
+    //     '<div class="bracket"></div>' +
+    //     '<div class="btnClose">' +
+    //     '&times;' +
+    //     '</div>' +
+    //     '</div>' +
+    //     '</div>';
+    //
+    // $('#con').append(templateHtml);
+
+    // var triggerType = "ontouchstart" in window ? "touchstart" : "click";
+    var triggerType = "click";
+    $('.btnClose').on(triggerType, function (e) {
+        e.stopPropagation();
+        $('.baffleHaze').hide();
+        $('.alertTipsContent').css("display", "flex").html('');
+    });
+
+
+    //自定义弹窗表单
+
+    window.yxbCore.popup1 = function (type,data,extaText) {
+        var tableTemplate;
+        var dataAwardId = data.drawId+'';
+        var activityId = scene.id+'';
+        var types = {};
+        types['table'] = function () {
+            tableTemplate =
+                '<p style="font-size: 14px;padding: 0px 0 0px;color: white">请填写实物奖品邮寄地址</p>'+
+                '<p style="font-size:12px;padding: 10px 0 5px"><span style="display: inline-block;width: 36px;text-align: start">姓名</span><input id="name20170804" type="text" placeholder="name" style="width:190px;height:26px;padding:2px 2px 2px 8px;border: 0;outline: 0;background:#37497b;color: #cccccc" /></p>' +
+                '<p style="font-size:12px;padding: 10px 0 5px"><span style="display: inline-block;width: 36px;text-align: start">电话</span><input id="tel20170804" type="tel" placeholder="tel" style="width:190px;height:26px;padding:2px 2px 2px 8px;border: 0;outline: 0;background:#37497b;color: #cccccc" /></p>' +
+                '<p style="font-size:12px;padding: 10px 0 5px"><span style="display: inline-block;width: 36px;text-align: start">地址</span><input id="add20170804" type="text" placeholder="add" style="width:190px;height:26px;padding:2px 2px 2px 8px;border: 0;outline: 0;background:#37497b;color: #cccccc" /></p>' +
+                '<p id="submitBtn" style="width: 30%;height:34px;line-height:34px;margin: 15px auto 0 ;background:#e29600;color: #fff;border-radius: 5px;font-size: 14px">保存</p>';
+            tableTemplate = extaText ? extaText + tableTemplate : tableTemplate;
+            $('.alertTipsContent').html(tableTemplate).css({"display": "block"});
+            $('#submitBtn').off().on(triggerType, function () {
+
+                var name = $('#name20170804').val();
+                var tel = $('#tel20170804').val();
+                var add = $('#add20170804').val();
+
+                var tmpData = {
+                    8963: name,
+                    8964: tel,
+                    8965: add,
+                    8966: dataAwardId
+                };
+                var data = {
+                    index: "actcomponent",
+                    type: "form",
+                    activityId: activityId,
+                    sumInfo: JSON.stringify(tmpData),
+                    submitTime: new Date().getTime().toString()
+                };
+                var url = 'ela/collect.do';
+
+                function ajaxData(data, url, usePHP, option) {
+
+                    if (!usePHP) {
+                        usePHP = false;
+                    }
+
+                    if (!option) {
+                        option = {};
+                    }
+                    var promise;
+                    var type = option.type ? option.type : "POST";
+                    var a = option.withIp ? "api_j" : "api_d";
+
+                    if (!usePHP) {
+                        data = JSON.stringify(data);
+                        function getAjaxUrl() {
+                            if (window.location.host.search("120.197") > -1 || window.location.host.search("yxb.com") > -1 || window.location.host.search("9000") > -1 ) {
+                                return "http://47.107.125.18/mssp_pps/" + url;
+                            } else {
+                                return "http://yxb.mmarket.com/mssp_pps/" + url;
+                            }
+                        }
+                        var urlModefied = getAjaxUrl();
+                        promise = $.ajax({
+                            type: type,
+                            url: urlModefied,
+                            data: data,
+                            dataType: 'json',
+                            contentType: 'text/plain'
+                        });
+                    }
+                    return promise;
+                }
+
+                ajaxData(data, url, false, {withIP: false}).success(function (data) {
+                    // console.log('成功', data);
+                    $('.btnClose').trigger(triggerType);
+                }).error(function (err) {
+                    // console.log('失败', err);
+                    $('.btnClose').trigger(triggerType);
+                });
+            });
+        };
+
+        types['rule'] = function () {
+            tableTemplate =
+
+                '<div id="activityTime" style="text-align: start;">' +
+                '<img src="../assets/static/images/activityTime.png" alt="" style="width: 70px;height: 20px;">' +
+                '<p style="width:240px;display:inline-block;line-height: 12px;font-size: 12px;word-break: break-all;word-wrap: break-word;">2017-08-18 到 2017-08-24</p>' +
+                '</div>' +
+                '<div id="activityUser" style="text-align: start;">' +
+                '<img src="../assets/static/images/activityUser.png" alt="" style="width: 70px;height: 20px;">' +
+                '<p style="width:240px;display:inline-block;line-height: 12px;font-size: 12px;word-break: break-all;word-wrap: break-word;">中国移动全品牌用户</p>' +
+                '</div>' +
+                '<div id="activityRule" style="text-align: start;">' +
+                '<img src="../assets/static/images/activityRule.png" alt="" style="width: 70px;height: 20px;">' +
+                '<p style="width:240px;font-size: 12px;display:block;word-break: break-all;word-wrap: break-word;">  1、从MM商场活动专题页成功下载《王者荣耀》，可获得一次转盘抽奖机会，10M-1G流量随机发放。<br/>2、本次活动限游戏新用户参加（活动期间首次下载用户），下载成功后，需登录MM帐号领取流量/额外奖品，奖品会活动结束后30个工作日内发放<br/>3、凡是有作弊嫌疑的用户或卸载软件的用户，将取消获奖资格。<br/>4、更多福利，请加Q群：320237713。</p>' +
+                '</div>' +
+                '<div id="activityKnow" style="text-align: start;">' +
+                '<img src="../assets/static/images/activityKnow.png" alt="" style="width: 70px;height: 20px;">' +
+                '<p style="width:240px;font-size: 12px;display:block;word-break: break-all;word-wrap: break-word;">  ＊   赠送的和包券为和包系统的现金抵用券，可在“和包支付”APP/官网，或微信公众号“中国移动和包”上支付商品购买。当前商品主要为引进了部分京东商城物品，以及爱奇艺会员、腾讯会员和芒果TV会员订购等，商家会不定期更新，具体的和包券使用详情可以登陆中国移动和包官网查看，网址：https://www.cmpay.com/</p>' +
+                '</div>';
+            $('.alertTipsContent').html(tableTemplate).css({"display": "block"});
+
+        };
+
+        types[type]();
+
+        $('.baffleHaze').show();
+    }
+})();
+
+//发布-订阅者模式
+var psEvent = (function () {
+    var clientList = {}, listen, trigger, remove;
+    listen = function (key, fn) {
+        if (!clientList[key]) {
+            clientList[key] = [];
+        }
+        clientList[key].push(fn);
+    };
+    trigger = function () {
+        var key = Array.prototype.shift.call(arguments), fns = clientList[key];
+        if (!fns || fns.length === 0) {
+            return false;
+        }
+        for (var i = 0, fn; fn = fns[i++];) {
+            fn.apply(this, arguments);
+        }
+    };
+    remove = function (key, fn) {
+        var fns = clientList[key];
+        if (!fns) {
+            return false;
+        }
+        if (!fn) {
+            fns && ( fns.length = 0 );
+        } else {
+            for (var l = fns.length - 1; l >= 0; l--) {
+                var _fn = fns[l];
+                if (_fn === fn) {
+                    fns.splice(l, 1);
+                }
+            }
+        }
+    };
+    return {listen: listen, trigger: trigger, remove: remove}
+})();
+psEvent.listen('appDownloadFinished', function () {
+    // 订阅 消息
+    var globalVarManager = yxbCore.templateParser('globalVarManager');
+    function parseJSON(data) {
+        var jsonc = typeof data == "string" ? JSON.parse(data) : data;
+        return jsonc;
+    }
+    function processData(data) {
+        data = parseJSON(data);
+        if(data.data && typeof data.data.count === "number"){
+            var leftChance = data.data.count;
+        } else if(data.resultCode === -107){
+            if(window.androidmm){
+                // window.androidmm.unauthLogin(window.location.href)
+            }
+        } else {
+            var leftChance = 0;
+        }
+        if($(".chance") && $(".chance").length){
+            $(".chance").text(leftChance);
+        }
+    }
+    globalVarManager.getLeftChances(function(data) {
+        processData(data);
+    });
+});

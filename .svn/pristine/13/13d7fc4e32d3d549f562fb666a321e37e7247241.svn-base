@@ -1,0 +1,13 @@
+{
+    "presets": ["es2015"],
+    "plugins": ["transform-object-rest-spread"],
+    "ignore": [
+        "./src/js/render/checkEnv.js",
+        "./src/js/render/previewbegin.js",
+        "./src/js/render/previewend.js",
+        "./src/js/render/005eqxCommon.js",
+        "./src/js/render/addComponent.js",
+        "./src/js/render/eqxiu.js",
+        "./src/js/render/renderPage.js",
+    ]
+}

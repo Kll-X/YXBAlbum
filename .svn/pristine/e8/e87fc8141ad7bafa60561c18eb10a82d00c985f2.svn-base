@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #xxx1{
+            border-image: -webkit-linear-gradient( yellow , blue) 0 1;
+            border-image: -moz-linear-gradient( yellow, blue) 0 1;
+            border-image: linear-gradient( yellow , blue) 0 1;
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <!--<canvas id="canvas"></canvas>-->
+    <!--<img src="http://userimg.yingyonghui.com/head/24/1458708838143/5426424.png-thumb" alt="" id="xxx">-->
+    <!--<img src="http://userimg.yingyonghui.com/head/24/1458708838143/5426424.png-thumb" alt="" id="xxx1">-->
+    <div id="xxx1">123</div>
+<!--<script type="text/javascript">-->
+    <!--var canvas = document.getElementById("canvas");-->
+    <!--var context = canvas.getContext("2d");-->
+    <!--canvas.width = 256;-->
+    <!--canvas.height = 256;-->
+
+    <!--var image = new Image();-->
+    <!--// 引用外部图片，需设置 crossOrigin 属性，否则 toDataURL 调用异常-->
+    <!--image.setAttribute('crossOrigin', 'anonymous');-->
+    <!--image.onload = function (){-->
+        <!--context.drawImage(image, -10, -10,256,256);-->
+        <!--// 最终生成的图片 base64 字符串-->
+        <!--var base64Image = canvas.toDataURL();-->
+        <!--document.getElementById('xxx1').src = base64Image;-->
+<!--//        console.log(base64Image);-->
+<!--//        canvas.width = 256;-->
+<!--//        canvas.height = 256;-->
+<!--//         console.log(base64Image);-->
+    <!--};-->
+    <!--// 将 src 换成 base64 字符串-->
+    <!--image.src = 'http://userimg.yingyonghui.com/head/24/1458708838143/5426424.png-thumb';-->
+<!--</script>-->
+</body>
+</html>
+
+
+<!--"{"data":[{"id":41459,"sceneId":2018032300033,"num":1,"name":null,"properties":{"bgAudio":""},"elements":[{"content":null,"css":[],"id":5189526967,"num":1,"pageId":"41237","properties":{"bgColor":null,"imgSrc":"pic/81/201803/5aa88c0b54f46_small.png","id":25467357},"sceneId":180316000,"title":null,"type":3},{"content":"","css":{"top":32,"left":17,"color":"#676767","zIndex":"2","width":292,"height":187,"backgroundColor":"","opacity":1,"borderWidth":0,"borderStyle":"solid","borderColor":"rgba(0,0,0,1)","paddingBottom":0,"paddingTop":0,"borderRadius":"0px","transform":"rotateZ(0deg)","textAlign":"left","lineHeight":1,"borderRadiusPerc":0,"boxShadow":"0px 0px 0px rgba(0,0,0,0.5)","boxShadowDirection":0,"boxShadowSize":0,"borderBottomRightRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderTopLeftRadius":"0px"},"id":8302934813,"num":1,"pageId":41237,"properties":{"width":292,"height":187,"src":"pic/81/201803/5aa88c40985fc.png","replacement":true,"id":903,"imgStyle":{"width":292,"height":187,"marginTop":"0px","marginLeft":"0px"}},"sceneId":180316000,"title":null,"type":4},{"content":"","css":{"top":273,"left":12,"color":"#676767","zIndex":"3","width":296,"height":198,"backgroundColor":"","opacity":1,"borderWidth":0,"borderStyle":"solid","borderColor":"rgba(0,0,0,1)","paddingBottom":0,"paddingTop":0,"borderRadius":"0px","transform":"rotateZ(0deg)","textAlign":"left","lineHeight":1,"borderRadiusPerc":0,"boxShadow":"0px 0px 0px rgba(0,0,0,0.5)","boxShadowDirection":0,"boxShadowSize":0,"borderBottomRightRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderTopLeftRadius":"0px"},"id":2913203557,"num":1,"pageId":41237,"properties":{"width":296,"height":198,"src":"pic/81/201802/5a7c0614af47b.png","replacement":true,"id":870,"imgStyle":{"width":296,"height":198,"marginTop":"0px","marginLeft":"-0.5px"}},"sceneId":180316000,"title":null,"type":4},{"content":"","css":{"top":0,"left":-1,"color":"#676767","zIndex":"4","width":320,"height":486,"backgroundColor":"","opacity":1,"borderWidth":0,"borderStyle":"solid","borderColor":"rgba(0,0,0,1)","paddingBottom":0,"paddingTop":0,"borderRadius":"0px","transform":"rotateZ(0deg)","textAlign":"left","lineHeight":1,"borderRadiusPerc":0,"boxShadow":"0px 0px 0px rgba(0,0,0,0.5)","boxShadowDirection":0,"boxShadowSize":0,"borderBottomRightRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderTopLeftRadius":"0px"},"id":361927300,"num":1,"pageId":41237,"properties":{"width":"100px","height":"100px","src":"pic/81/201803/5aab1ff803844.png","replacement":false,"id":9386090,"imgStyle":{"width":320,"height":486,"marginTop":"0","marginLeft":"0"}},"sceneId":180316000,"title":null,"type":4}],"scene":null,"alterImgsCount":2}],"openid":"b0JONUh3TjFJTG1CZm9JMHVneXA1M1ptUEdnQQ","num":1}"-->
